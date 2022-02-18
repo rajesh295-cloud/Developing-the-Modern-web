@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home-Page</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<script type="text/javascript" content="width=device-width, initial-scale=1" src="../script/web.js"></script>
+	<script type="text/javascript" src="../scripts/jquery.js"></script>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<style>
+
+/*css for index page*/
+
+body{
+	/*background-image: url(https://www.7mallorca.com/wp-content/uploads/2014/12/finca.rafel_.muro_.7mallorca1-600x398.jpg);*/
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: top center;
+
+}
+
+#header {
+  background-image: url(https://scontent.fktm4-1.fna.fbcdn.net/v/t1.15752-9/s2048x2048/115721439_294896668415314_4666260751894906441_n.jpg?_nc_cat=107&_nc_sid=b96e70&_nc_ohc=IyDnyEn8UV8AX-WLRxT&_nc_ht=scontent.fktm4-1.fna&_nc_tp=7&oh=25e1463b2e753122811e796825042dea&oe=5F41727A);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: black;
+  margin: 0;
+  color: white;
+  flex-wrap: wrap;
+  text-align: center;
+  font-size: 100%;
+  font-weight: bold;
+  width: 100%;
+  transition: 0.8s;
+
+}
+#topnav {
+text-align: left;
+background-color: lightblue;
+ overflow: hidden;
+ width: 100%;
+background-repeat: no-repeat;
+ background-size: cover;
+ background-position: center;
+font-family: Algerian;
+}
+.header img{
+	border: dotted grey;
+	border-radius: 50%;
+}
+#navbar a.active {
+  background-color: grey;
+  color: white;
+}
+#topnav a {
+  float: left;
+  color: white;
+  text-align: center;
+  padding: 1%;
+  text-decoration: none;
+  width: 100%;
+  font-size: 65%;
+  margin-left: 9%;
+  margin-right: 9%;
+}
+#topnav a:hover {
+  background-color: white;
+  color: black;
+}
+.stickey, .li{
+	display: inline;
+
+	font-size: 250%;
+	color: black;
+  margin-left: 6%;
+	margin-right:6%;
+}
+
+.footer {
+
+
+   font-size: 20px;
+  font-family: Algerian;
+   width: 100%;
+   background-color: black;
+   color: white;
+   text-align: center;
+   height: 60px;
+}
+.sticky a.active {
+  background-color: #2196F3;
+  color: white;
+}
+
+.slogan{
+	text-align: center;
+	font-size: 50px;
+	font-family: Algerian;
+}
+.last{
+	display: inline-block;
+	margin-left: 5%;
+}
+.box{
+	border-color: grey;
+	border-width: 60px;
+
+	font-family: Algerian;
+	font-size: 20px;
+}
+.fie{
+	margin: 5%;
+
+
+}
+.field{
+
+	margin-left: 10%;
+	border-color: blue;
+	border-style: double;
+	border-width: 10px;
+	padding: 2%;
+
+ }
+.select{
+	text-align: center;
+	color: red;
+
+}
+.para{
+	border-style: solid;
+	text-align: center;
+	font-family: Algerial;
+	font-size: 20px;
+	padding: 3%;
+	background-color: lightgreen;
+	margin-bottom: 2%;
+}
+.para1{
+	border-style: solid;
+	text-align: center;
+	font-family: Algerial;
+	font-size: 20px;
+	padding: 3%;
+	background-color: lightgreen;
+	margin-top: 2%;
+}
+h3{
+
+  font-family: Algerian;
+}
+input[type=text] {
+	margin-top: 1%;
+	margin-left: 35%;
+
+	height: 15px;
+  	width: 30%;
+
+
+}
+.bikes-pass{
+    margin-left: 300px;
+    margin-top: 50px;
+}
+
+/* When the input field gets focus, change its width to 30% */
+input[type=text]:focus {
+
+	height:20px;
+  width: 30%;
+}
+    </style>
+</head>
+<body onload="slider()">
+	<header class="header" id="header">
+<a href="index.html "><img src="https://media.zigcdn.com/media/model/2020/Mar/yamaha-yzf-r15-v3-right-side-view_360x240.jpg" height="80px" width="80px"></a>
+  <h1>BikersNepal</h1>
+  <h3>Gawin Bike Info</h3>
+  </header>
+  <div id="topnav" >
+      <ul class="sticky" style="display: inline-flex"; style="width: 100%">
+				<li class="li"><a href="http://127.0.0.1:8000/index/"> Home</a> </li>
+				<li class="li"><a class="active" href="http://127.0.0.1:8000/Yamaha/">Yamaha</a> </li>
+				<li class="li"><a href="http://127.0.0.1:8000/Honda/">Honda</a> </li>
+				<li class="li"><a href="http://127.0.0.1:8000/Suzuki/">Suzuki</a> </li>
+				<li class="li"><a href="http://127.0.0.1:8000/Bajaj/">Bajaj</a></li>
+				<li class="li"><a href="http://127.0.0.1:8000/aboutus/">AboutUs</a></li>
+				<li class="li"><a href="/logout_redirect/">Logout</a></li>
+
+			</ul>
+
+
+</div>
+
+  <div class="news">
+
+
+
+        {% for x in detail %}
+            <form  method="POST">
+        {% csrf_token %}
+        <div class="bikes">
+          <div class="bikes-pass">
+
+
+             <img src="{{x.file}}" alt="Image" class="img-fluid" width="700px" height="400px">  <br>
+
+            <b>Bikename :  </b>{{x.Bikename}} <br>
+	        <b>EngineDisplacement :  </b>{{x.EngineDisplacement}} <br><br>
+	         <b>maxpower :  </b>{{x.maxpower}}<br><br>
+              <b>maxtorque :  </b>{{x.maxtorque}} <br><br>
+	         <b>Fuel :  </b>{{x.Fuel}} <br>
+              <b>Gear :  </b>{{x.Gear}} <br><br>
+
+            <b>Price :  </b>{{x.Price}} <br><br>
+	`        <b>Description :  </b>{{x.Desc}} <br>
+              <a href="/reserve/cart/{{x.pk}}/">Book this bike</a><br>
+            <a href="/deletey/{{x.pk}}">Delete this Bike detail</a><br>
+            <a href="/update_form/{{x.pk}}" role="button">Update bike details</a> <br><br><br>
+          </div>
+        </div>
+
+
+            {% empty %}
+               <h2> No bikes are available.</h2>
+        {% endfor %}
+
+
+<!--              <a href="/delete/{{item.pk}}" role="button">Delete</a><br>
+                  <a href="/update_form/{{item.pk}}" role="button">Update</a> -->
+    </form>
+
+
+
+
+
+	<!-- Footer -->
+<footer class="text-center text-lg-start bg-light text-muted">
+	<!-- Section: Social media -->
+	<section
+	  class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom"
+	>
+	  <!-- Left -->
+	  <div class="me-5 d-none d-lg-block">
+		<span>Get connected with us on social networks:</span>
+	  </div>
+	  <!-- Left -->
+  
+	  <!-- Right -->
+	  <div>
+		<a href="" class="me-4 text-reset">
+		  <i class="fab fa-facebook-f"></i>
+		</a>
+		<a href="" class="me-4 text-reset">
+		  <i class="fab fa-twitter"></i>
+		</a>
+		<a href="" class="me-4 text-reset">
+		  <i class="fab fa-google"></i>
+		</a>
+		<a href="" class="me-4 text-reset">
+		  <i class="fab fa-instagram"></i>
+		</a>
+		<a href="" class="me-4 text-reset">
+		  <i class="fab fa-linkedin"></i>
+		</a>
+		<a href="" class="me-4 text-reset">
+		  <i class="fab fa-github"></i>
+		</a>
+	  </div>
+	  <!-- Right -->
+	</section>
+	<!-- Section: Social media -->
+  
+	<!-- Section: Links  -->
+	<section class="">
+	  <div class="container text-center text-md-start mt-5">
+		<!-- Grid row -->
+		<div class="row mt-3">
+		  <!-- Grid column -->
+		  <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+			<!-- Content -->
+			<h6 class="text-uppercase fw-bold mb-4">
+			  <i class="fas fa-gem me-3"></i>Bikers Nepal
+			</h6>
+			<p>
+			  
+			  Bikers Nepal would be delighted to serve you and your lovely two wheeler. Uplifiting 
+			  the condition of running vehicles in Nepalese roads is our main goal!
+			</p>
+		  </div>
+		  <!-- Grid column -->
+  
+		  <!-- Grid column -->
+		  <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+			<!-- Links -->
+			<h6 class="text-uppercase fw-bold mb-4">
+			  Activities
+			</h6>
+			<p>
+			  <a href="#!" class="text-reset">Bikes</a>
+			</p>
+			<p>
+			  <a href="#!" class="text-reset">Parts</a>
+			</p>
+			<p>
+			  <a href="#!" class="text-reset">Servicing</a>
+			</p>
+			<p>
+			  <a href="#!" class="text-reset">Modify</a>
+			</p>
+		  </div>
+		  <!-- Grid column -->
+  
+		  <!-- Grid column -->
+		  <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+			<!-- Links -->
+			<h6 class="text-uppercase fw-bold mb-4">
+			  Useful links
+			</h6>
+			<p>
+			  <a href="#!" class="text-reset">About Us</a>
+			</p>
+			<p>
+			  <a href="#!" class="text-reset">Message</a>
+			</p>
+			<p>
+			  <a href="#!" class="text-reset">Blog</a>
+			</p>
+			<p>
+			  <a href="#!" class="text-reset">Faq</a>
+			</p>
+			<p>
+				<a href="#!" class="text-reset">Policy</a>
+			  </p>
+			<p>
+				<a href="#!" class="text-reset">Online Payment</a>
+			  </p>
+		  </div>
+		  <!-- Grid column -->
+  
+		  <!-- Grid column -->
+		  <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+			<!-- Links -->
+			<h6 class="text-uppercase fw-bold mb-4">
+			  Contact
+			</h6>
+			<p><i class="fas fa-home me-3"></i> Kathmandu, Nepal</p>
+			<p>
+			  <i class="fas fa-envelope me-3"></i>
+			  bikersNepal@gmail.com
+			</p>
+			<p><i class="fas fa-phone me-3"></i>9804239197</p>
+			<p><i class="fas fa-print me-3"></i>9801234567</p>
+		  </div>
+		  <!-- Grid column -->
+		</div>
+		<!-- Grid row -->
+	  </div>
+	</section>
+	<!-- Section: Links  -->
+  
+	<!-- Copyright -->
+	<div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+	  © 2021 Copyright:
+	  <a class="text-reset fw-bold" href="https://mdbootstrap.com/">BikersNepal.com</a>
+	</div>
+	<!-- Copyright -->
+  </footer>
+  <!-- Footer -->
+<script>
+
+window.onscroll = function() {scrollFunction()};
+document.getElementById("header").style.fontSize = "70px";
+function scrollFunction() {
+
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    document.getElementById("header").style.fontSize = "10px";
+  } else
+    document.getElementById("header").style.fontSize = "70px";
+  }
+
+</script>
+
+<script  type="text/javascript">
+		var i=0;
+		function change_image(){
+		document.getElementById("imgs").src = "../Pictures/img"+(i++ % 6 )+".jpg";
+	}
+	function slider(){
+		setInterval(change_image, 5000);
+	}
+</script>
+
+
+</body>
+</html>
